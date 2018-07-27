@@ -1,6 +1,5 @@
-let negociacao = new Negociacao(new Date(), 2, 100)
+const controller = new NegociacaoController();
 
-negociacao._quantidade = 34 
-
-console.log(negociacao._quantidade);
-console.log(negociacao);
+document
+.querySelector('form')
+.addEventListener('submit', event => controller.adiciona(event));
