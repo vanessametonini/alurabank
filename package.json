@@ -1,0 +1,24 @@
+{
+  "name": "alurabank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanessametonini/alurabank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessametonini/alurabank/issues"
+  },
+  "homepage": "https://github.com/vanessametonini/alurabank#readme",
+  "devDependencies": {
+    "typescript": "^2.9.2"
+  }
+}
