@@ -1,26 +1,20 @@
 class Negociacao {
 
-    private _data;
-    private _quantidade;
-    private _valor;
+    constructor( private _data: Date
+                , private _quantidade: number
+                , private _valor: number){
 
-    constructor(data, quantidade, valor){
-
-        if(!data){
+        if(!_data){
             throw Error('Uma data precisa ser definida')
         }
 
-        if(!quantidade){
+        if(!_quantidade){
             throw Error('Uma quantidade precisa ser definida')
         }
 
-        if(!valor){
+        if(!_valor){
             throw Error('Um valor precisa ser definida')
         }
-        
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;
     }
 
     get data(){
