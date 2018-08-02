@@ -10,7 +10,9 @@ class NegociacaoController {
     this._inputData = <HTMLInputElement>document.querySelector('#data');
     this._inputQuantidade = <HTMLInputElement>document.querySelector('#quantidade');
     this._inputValor = <HTMLInputElement>document.querySelector('#valor');
-    // vai dar um erro de compilação, pois a classe não recebe parâmetro ainda
+    
+    // atualiza a view para exibir os dados do modelo, vazio
+    this._negociacoesView.update(this._negociacoes);
   }
 
   adiciona(event: Event) {
@@ -24,7 +26,7 @@ class NegociacaoController {
     );
 
     this._negociacoes.adiciona(negociacao);
-    this._negociacoes.paraArray().length = 0; // acabou de apagar!
-    console.log(this._negociacoes.paraArray());
+    // depois de adicionar, atualiza a view novamente para refletir os dados
+    this._negociacoesView.update(this._negociacoes);
   }
 }
