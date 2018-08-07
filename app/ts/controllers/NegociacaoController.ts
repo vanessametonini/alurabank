@@ -1,11 +1,16 @@
-class NegociacaoController {
+import { NegociacoesView } from "../views/NegociacoesView";
+import { MensagemView } from "../views/MensagemView";
+import { Negociacoes } from "../models/Negociacoes";
+import { Negociacao } from "../models/Negociacao";
+
+export class NegociacaoController {
 
   private _inputData: HTMLInputElement;
   private _inputQuantidade: HTMLInputElement;
   private _inputValor: HTMLInputElement;
   private _negociacoes: Negociacoes = new Negociacoes();
-  private _negociacoesView = new Views.NegociacoesView('#negociacoesView');
-  private _mensagemView = new Views.MensagemView('#mensagemView');
+  private _negociacoesView = new NegociacoesView('#negociacoesView');
+  private _mensagemView = new MensagemView('#mensagemView');
 
   constructor() {
     this._inputData = <HTMLInputElement>document.querySelector('#data');
