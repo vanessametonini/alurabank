@@ -1,8 +1,8 @@
 export class Negociacao {
 
-    constructor( private _data: Date
-                , private _quantidade: number
-                , private _valor: number){
+    constructor( readonly _data: Date
+                , readonly _quantidade: number
+                , readonly _valor: number){
 
         if(!_data){
             throw Error('Uma data precisa ser definida')
@@ -17,17 +17,6 @@ export class Negociacao {
         }
     }
 
-    get data(){
-        return this._data
-    }
-
-    get quantidade(){
-        return this._quantidade
-    }
-
-    get valor(){
-        return this._valor
-    }
 
     get volume(){
         return this._valor * this._quantidade

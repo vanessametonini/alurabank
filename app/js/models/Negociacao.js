@@ -20,15 +20,6 @@ System.register([], function (exports_1, context_1) {
                         throw Error('Um valor precisa ser definida');
                     }
                 }
-                get data() {
-                    return this._data;
-                }
-                get quantidade() {
-                    return this._quantidade;
-                }
-                get valor() {
-                    return this._valor;
-                }
                 get volume() {
                     return this._valor * this._quantidade;
                 }

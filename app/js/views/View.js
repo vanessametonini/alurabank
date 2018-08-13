@@ -6,11 +6,12 @@ System.register([], function (exports_1, context_1) {
         setters: [],
         execute: function () {
             View = class View {
-                constructor(seletor) {
+                constructor(seletor, escapar) {
                     this._elemento = document.querySelector(seletor);
                 }
                 update(model) {
-                    // erro de compilação
+                    let template = this.template(model);
+                    template = template.replace(/<script>[\s\S]*?<\/script>/, '');
                     this._elemento.innerHTML = this.template(model);
                 }
             };
