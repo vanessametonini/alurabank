@@ -6,8 +6,9 @@ export class Negociacoes {
     adiciona(negociacao: Negociacao){
         this._negociacoes.push(negociacao);
     }
+ 
+    get listar(): Negociacao[] {
 
-    paraArray(): Negociacao[] {
-        return [].concat(this._negociacoes);
+        return [].concat(this._negociacoes) 
     }
 }

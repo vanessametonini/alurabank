@@ -22,8 +22,8 @@ System.register(["./View"], function (exports_1, context_1) {
           </tr>
         </thead>
 
-        <tbody>
-          ${modelo.paraArray().map(negociacao => `
+        <tbody> 
+          ${modelo.paraArray.map(negociacao => `
           <tr>
             <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
             <td>${negociacao.quantidade}</td>

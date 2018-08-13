@@ -15,8 +15,8 @@ export class NegociacoesView extends View<Negociacoes> {
           </tr>
         </thead>
 
-        <tbody>
-          ${modelo.paraArray().map(negociacao => 
+        <tbody> 
+          ${modelo.listar.map(negociacao => 
           `
           <tr>
             <td>${negociacao.data.getDate()}/${negociacao.data.getMonth()+1}/${negociacao.data.getFullYear()}</td>
