@@ -1,5 +1,6 @@
 import { MensagemView, NegociacoesView } from "../views/index";
 import { Negociacoes, Negociacao } from '../models/index'
+import { logarTempoDeExecucao } from "../helpers/decorators/index";
 
 export class NegociacaoController {
 
@@ -17,11 +18,15 @@ export class NegociacaoController {
     this._negociacoesView.update(this._negociacoes);
   }
 
+  @logarTempoDeExecucao()
   adiciona(event: Event) {
 
     event.preventDefault();
 
     let data = new Date(this._inputData.value.replace(/-/g,'/'));
+
+    console.log(data);
+    
 
     if(data.getDay() == DiaDoSemana.Domingo || data.getDay() == DiaDoSemana.Sabado ){
       this._mensagemView.update('Somente negociações em dias úteis por favor');
@@ -37,6 +42,7 @@ export class NegociacaoController {
     this._negociacoes.adiciona(negociacao);
     this._negociacoesView.update(this._negociacoes);
     this._mensagemView.update('Negociação adicionada com sucesso');
+    
   }
 }
 
