@@ -1,6 +1,6 @@
 System.register(["../views/index", "../models/index"], function (exports_1, context_1) {
     "use strict";
-    var index_1, index_2, NegociacaoController;
+    var index_1, index_2, NegociacaoController, DiaDoSemana;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -24,13 +24,27 @@ System.register(["../views/index", "../models/index"], function (exports_1, cont
                 }
                 adiciona(event) {
                     event.preventDefault();
-                    const negociacao = new index_2.Negociacao(new Date(this._inputData.value.replace(/-/g, '/')), parseInt(this._inputQuantidade.value), parseFloat(this._inputValor.value));
+                    let data = new Date(this._inputData.value.replace(/-/g, '/'));
+                    if (data.getDay() == DiaDoSemana.Domingo || data.getDay() == DiaDoSemana.Sabado) {
+                        this._mensagemView.update('Somente negociações em dias úteis por favor');
+                        return;
+                    }
+                    const negociacao = new index_2.Negociacao(data, parseInt(this._inputQuantidade.value), parseFloat(this._inputValor.value));
                     this._negociacoes.adiciona(negociacao);
                     this._negociacoesView.update(this._negociacoes);
                     this._mensagemView.update('Negociação adicionada com sucesso');
                 }
             };
             exports_1("NegociacaoController", NegociacaoController);
+            (function (DiaDoSemana) {
+                DiaDoSemana[DiaDoSemana["Domingo"] = 0] = "Domingo";
+                DiaDoSemana[DiaDoSemana["Segunda"] = 1] = "Segunda";
+                DiaDoSemana[DiaDoSemana["Terca"] = 2] = "Terca";
+                DiaDoSemana[DiaDoSemana["Quarta"] = 3] = "Quarta";
+                DiaDoSemana[DiaDoSemana["Quinta"] = 4] = "Quinta";
+                DiaDoSemana[DiaDoSemana["Sexta"] = 5] = "Sexta";
+                DiaDoSemana[DiaDoSemana["Sabado"] = 6] = "Sabado";
+            })(DiaDoSemana || (DiaDoSemana = {}));
         }
     };
 });
