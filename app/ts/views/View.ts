@@ -2,8 +2,8 @@ export abstract class View<T> {
 
   private _elemento: Element;
 
-  constructor(seletor: string, escapar?: boolean) {
-    this._elemento = document.querySelector(seletor);
+  constructor(seletor: string, escapar: boolean = false) {
+    this._elemento = document.querySelector(seletor) as Element;
   }
 
   update(model: T) {
