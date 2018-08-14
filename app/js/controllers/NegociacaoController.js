@@ -34,7 +34,6 @@ System.register(["../views/index", "../models/index", "../helpers/decorators/ind
                 adiciona(event) {
                     event.preventDefault();
                     let data = new Date(this._inputData.value.replace(/-/g, '/'));
-                    console.log(data);
                     if (data.getDay() == DiaDoSemana.Domingo || data.getDay() == DiaDoSemana.Sabado) {
                         this._mensagemView.update('Somente negociações em dias úteis por favor');
                         return;

@@ -6,22 +6,22 @@ System.register([], function (exports_1, context_1) {
         setters: [],
         execute: function () {
             Negociacao = class Negociacao {
-                constructor(_data, _quantidade, _valor) {
-                    this._data = _data;
-                    this._quantidade = _quantidade;
-                    this._valor = _valor;
-                    if (!_data) {
+                constructor(data, quantidade, valor) {
+                    this.data = data;
+                    this.quantidade = quantidade;
+                    this.valor = valor;
+                    if (!data) {
                         throw Error('Uma data precisa ser definida');
                     }
-                    if (!_quantidade) {
+                    if (!quantidade) {
                         throw Error('Uma quantidade precisa ser definida');
                     }
-                    if (!_valor) {
+                    if (!valor) {
                         throw Error('Um valor precisa ser definida');
                     }
                 }
                 get volume() {
-                    return this._valor * this._quantidade;
+                    return this.valor * this.quantidade;
                 }
             };
             exports_1("Negociacao", Negociacao);

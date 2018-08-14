@@ -1,24 +1,24 @@
 export class Negociacao {
 
-    constructor( readonly _data: Date
-                , readonly _quantidade: number
-                , readonly _valor: number){
+    constructor( readonly data: Date
+                , readonly quantidade: number
+                , readonly valor: number){
 
-        if(!_data){
+        if(!data){
             throw Error('Uma data precisa ser definida')
         }
 
-        if(!_quantidade){
+        if(!quantidade){
             throw Error('Uma quantidade precisa ser definida')
         }
 
-        if(!_valor){
+        if(!valor){
             throw Error('Um valor precisa ser definida')
         }
     }
 
 
     get volume(){
-        return this._valor * this._quantidade
+        return this.valor * this.quantidade
     }
 }

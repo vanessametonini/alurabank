@@ -1,6 +1,6 @@
 System.register(["./controllers/NegociacaoController"], function (exports_1, context_1) {
     "use strict";
-    var NegociacaoController_1, controller;
+    var NegociacaoController_1, controller, formulario;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -10,9 +10,8 @@ System.register(["./controllers/NegociacaoController"], function (exports_1, con
         ],
         execute: function () {
             controller = new NegociacaoController_1.NegociacaoController();
-            document
-                .querySelector('form')
-                .addEventListener('submit', event => controller.adiciona(event));
+            formulario = document.querySelector('form');
+            formulario.addEventListener('submit', event => controller.adiciona(event));
         }
     };
 });
